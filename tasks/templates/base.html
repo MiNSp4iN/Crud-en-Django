@@ -14,8 +14,8 @@
         }
         .menu {
             display: none;
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
+            background-color: #463d3d;
+            border: 1px solid #dac5c5;
             border-radius: 5px;
             position: absolute;
             top: 50px;
@@ -30,9 +30,6 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="/">Django App</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="navbar">
             <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
           </div>
@@ -41,7 +38,6 @@
                 <li class="nav-item">
                     <a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a>
                 </li>
-    
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a href="{% url 'create_task' %}" class="nav-link active" aria-current="page">Create Task</a>
