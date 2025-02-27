@@ -14,7 +14,10 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar">
+            <span class="menu-toggle" onclick="toggleMenu()">Menú</span>
+          </div>
+          <div class="menu" id="menu">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a>
@@ -43,6 +46,17 @@
                 {% endif %}
             </ul>
           </div>
+          <script>
+            function toggleMenu() {
+              var menu = document.getElementById('menu');
+              if (menu.style.display == 'block') {
+                menu.style.display = 'none';
+              } else {
+                menu.style.display = 'block';
+              }
+            }
+          </script>
+          <!-- Este script es para que el menú se oculte cuando se haga click en cualquier parte de la pantalla -->
         </div>
       </nav>
     
