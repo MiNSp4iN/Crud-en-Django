@@ -40,23 +40,23 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="{% url 'create_task' %}" class="nav-link active" aria-current="page">Create Task</a>
+                    <a href="{% url 'create_task' %}" class="nav-link active" aria-current="page">Crear Tarea</a>
                 </li>
                 <li>
-                    <a href="{% url 'tasks' %}" class="nav-link active" aria-current="page">Tasks Pending</a>
+                    <a href="{% url 'tasks' %}" class="nav-link active" aria-current="page">Tareas pendientes</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'tasks_completed' %}" class="nav-link active" aria-current="page">Tasks Completed</a>
+                    <a href="{% url 'tasks_completed' %}" class="nav-link active" aria-current="page">Tareas completadas</a>
                 </li>
                 <li class="nav-item">
-                   <a href="/logout" class="nav-link active" aria-current="page">Logout</a>
+                   <a href="/logout" class="nav-link active" aria-current="page">Salir</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a href="{% url 'signup' %}" class="nav-link active" aria-current="page">Signup</a>
+                    <a href="{% url 'signup' %}" class="nav-link active" aria-current="page">Registrarse</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'signin' %}" class="nav-link active" aria-current="page">Signin</a>
+                    <a href="{% url 'signin' %}" class="nav-link active" aria-current="page">Iniciar sesión</a>
                 </li>
                 {% endif %}
             </ul>

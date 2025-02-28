@@ -5,29 +5,29 @@
     <div class="row">
         <div class="col-md-4 offset-md-4 mt-5">
             <form action="/signup/" method="POST" class="card card-body">
-                <h1 class="text-center">Sigunp</h1>
+                <h1 class="text-center">Registrarse</h1>
                 {{error}}
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="username">Username:</label>
+                    <label for="username">Usuario:</label>
                     <input type="text" name="username" id="username" class="form-control"
                         placeholder="Write your username">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password1">Password:</label>
+                    <label for="password1">Contraseña:</label>
                     <input type="password" name="password1" id="password1" class="form-control"
                         placeholder="Write your password">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password2">Confirm your password:</label>
+                    <label for="password2">Confirma tu contraseña:</label>
                     <input type="password" name="password2" id="password2" class="form-control"
                         placeholder="Confirm your password">
                 </div>
 
                 <button class="btn btn-primary">
-                    Signup
+                    Registrarse
                 </button>
             </form>
         </div>

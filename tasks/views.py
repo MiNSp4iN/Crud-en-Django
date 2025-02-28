@@ -30,12 +30,12 @@ def signup(request):
             except IntegrityError:
                 return render(request, "signup.html", {
                     "form": UserCreationForm(),
-                    "error": "Username already exists",
+                    "error": "El nombre de usuario ya existe",
                 })
 
         return render(request, "signup.html", {
             "form": UserCreationForm(),
-            "error": "Passwords did not match",
+            "error": "Las contraseñas no coinciden",
         })
 
 
@@ -45,7 +45,7 @@ def tasks(request):
     # Filtramos las tareas por el usuario que ha iniciado sesión. datecompleted__isnull=True es como decir que la fecha de completado es nula y quiero que me muestres las tareas que no tienen fecha de completado, es decir, me muestra las tareas que al no tener fecha de completado, aún no están acabadas, le estoy pidiendo las tareas que quedan por hacer.
     return render(request, "tasks.html", {
         "tasks": tasks,
-        "mensaje": "Tasks pending",
+        "mensaje": "Tareas pendientes",
     })
 
 
@@ -56,7 +56,7 @@ def tasks_completed(request):
     # Filtramos las tareas por el usuario que ha iniciado sesión. datecompleted__isnull=False es como decir que la fecha de completado no es nula y quiero que me muestres las tareas que tienen fecha de completado, es decir, me muestra las tareas que al tener fecha de completado, están acabadas, le estoy pidiendo las tareas que ya están hechas. Order_by("-datecompleted") nos indica que las tareas se ordenarán por la fecha de completado de forma descendente, es decir, que las tareas más recientes aparecerán primero.
     return render(request, "tasks.html", {
         "tasks": tasks,
-        "mensaje": "Tasks completed",
+        "mensaje": "Tareas completadas",
     })
 
 
@@ -83,7 +83,8 @@ def create_task(request):
             # Si hay un error, devolvemos el formulario con un mensaje de error.
             return render(request, "create_task.html", {
                 "form": TaskForm(),
-                "error": "Please provide valida data."
+                "error": "Por favor, proporcione datos validados",
+."
             })
 
 
@@ -107,7 +108,7 @@ def task_detail(request, task_id):
             return render(request, "task_detail.html", {
                 "task": task,
                 "form": form,
-                "error": "Error updating task."
+                "error": "Error al actualizar la tarea."
             })
 
 
@@ -145,7 +146,7 @@ def signin(request):
         if user is None:
             return render(request, "signin.html", {
                 "form": AuthenticationForm(),
-                "error": "Username or password is incorrect", })
+                "error": "Usuario o contraseña incorrectas", })
         else:
             login(request, user)
             return redirect("tasks")
