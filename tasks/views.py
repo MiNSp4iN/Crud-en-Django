@@ -84,7 +84,6 @@ def create_task(request):
             return render(request, "create_task.html", {
                 "form": TaskForm(),
                 "error": "Por favor, proporcione datos validados",
-."
             })
 
 
