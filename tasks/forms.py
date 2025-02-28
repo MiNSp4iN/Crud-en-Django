@@ -9,7 +9,7 @@ class TaskForm(forms.ModelForm):
         fields = ["title", "description", "important"]
         #fields nos indica los campos que queremos que se muestren en el formulario. En este caso, el título, la descripción y si es importante o no.
         widgets = {
-            "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "Write a title"}),
-            "description": forms.Textarea(attrs={"class": "form-control" , "placeholder": "Write a description"}),
+            "title": forms.TextInput(attrs={"class": "form-control", "placeholder": "Escribe un título"}),
+            "description": forms.Textarea(attrs={"class": "form-control" , "placeholder": "Escribe una descripción"}),
             "important": forms.CheckboxInput(attrs={"class": "form-check-input m-auto"}),
         }
